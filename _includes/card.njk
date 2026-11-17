@@ -1,17 +1,80 @@
-<li class="card" data-tags="{{ (project.tags or []) | join('|') }}">
-  <a class="card-link" href="{{ project.url }}" target="_blank" rel="noopener">
-    <div class="card-thumb">
-      {% screenshot project.screenshot, "Preview of " + project.title %}
+{#- One project card. project.type is "canva", "instagram", "tiktok", "image" or "gallery"
+    (see eleventy.config.js). -#}
+{%- if project.type == "image" or project.type == "gallery" -%}
+  {%- set linkUrl = project.fullImageUrl -%}
+  {%- set linkText = "Full size" -%}
+{%- elif project.type == "instagram" -%}
+  {%- set linkUrl = project.viewUrl -%}
+  {%- set linkText = "View on Instagram" -%}
+{%- elif project.type == "tiktok" -%}
+  {%- set linkUrl = project.viewUrl -%}
+  {%- set linkText = "View on TikTok" -%}
+{%- else -%}
+  {%- set linkUrl = project.viewUrl -%}
+  {%- set linkText = "View on Canva" -%}
+{%- endif -%}
+<li class="card card--{{ project.type }}" data-branch="{{ project.branch or '' }}" data-tags="{{ (project.tags or []) | join('|') }}">
+  {% if project.type == "canva" %}
+  <div class="card-media card-embed">
+    <iframe src="{{ project.embedUrl }}" title="{{ project.title }} (Canva design)"
+      loading="lazy" allow="fullscreen" allowfullscreen></iframe>
+  </div>
+  {% elif project.type == "instagram" %}
+  <div class="card-media card-instagram">
+    <blockquote class="instagram-media" data-instgrm-permalink="{{ project.viewUrl }}" data-instgrm-version="14">
+      <a href="{{ project.viewUrl }}" target="_blank" rel="noopener">View this post on Instagram</a>
+    </blockquote>
+  </div>
+  {% elif project.type == "tiktok" %}
+  <div class="card-media card-tiktok">
+    <iframe src="{{ project.embedUrl }}" title="{{ project.title }} (TikTok video)"
+      loading="lazy" allow="fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  {% elif project.type == "gallery" %}
+  {#- Swipeable strip of photos. gallery.js adds arrows, counter and thumbnails behaviour;
+      without JavaScript it is still a scrollable strip. -#}
+  <div class="card-media card-gallery" data-gallery>
+    <div class="gallery-viewport">
+      <div class="gallery-track" tabindex="0" role="region" aria-label="{{ project.title }}: {{ project.gallery.length }} photos">
+        {% for photo in project.gallery %}
+        <a class="gallery-slide" href="{{ photo.fullUrl }}" target="_blank" rel="noopener" tabindex="-1">
+          {{ photo.html | safe }}
+        </a>
+        {% endfor %}
+      </div>
+      <button type="button" class="gallery-nav gallery-prev" aria-label="Previous photo" hidden>‹</button>
+      <button type="button" class="gallery-nav gallery-next" aria-label="Next photo" hidden>›</button>
+      <span class="gallery-count" aria-live="polite" hidden>1 / {{ project.gallery.length }}</span>
     </div>
-    <div class="card-body">
-      <h2 class="card-title">{{ project.title }}</h2>
-      <time class="card-date" datetime="{{ project.date | isoDate }}">{{ project.date | readableDate }}</time>
-      {% if project.description %}<p class="card-desc">{{ project.description }}</p>{% endif %}
-      {% if project.tags and project.tags.length %}
-      <ul class="tags" aria-label="Tags">
-        {% for tag in project.tags %}<li class="tag">{{ tag }}</li>{% endfor %}
-      </ul>
-      {% endif %}
+    <div class="gallery-thumbs" hidden>
+      {% for photo in project.gallery %}
+      <button type="button" class="gallery-thumb" aria-label="Show photo {{ loop.index }}"{% if loop.first %} aria-current="true"{% endif %}>
+        {{ photo.thumbHtml | safe }}
+      </button>
+      {% endfor %}
     </div>
-  </a>
+  </div>
+  {% else %}
+  <div class="card-media card-picture">
+    <a href="{{ linkUrl }}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+      {{ project.pictureHtml | safe }}
+    </a>
+  </div>
+  {% endif %}
+  <div class="card-body">
+    <div class="card-head">
+      <h2 class="card-title">
+        <a href="{{ linkUrl }}" target="_blank" rel="noopener" data-full-link>{{ project.title }}<span class="visually-hidden"> ({{ linkText | lower }}, opens in a new tab)</span></a>
+      </h2>
+      <a class="card-ext-link" href="{{ linkUrl }}" target="_blank" rel="noopener" data-full-link
+        tabindex="-1" aria-hidden="true">{{ linkText }} <span>↗</span></a>
+    </div>
+    {% if project.date %}<time class="card-date" datetime="{{ project.date | isoDate }}">{{ project.date | readableDate }}</time>{% endif %}
+    {% if project.description %}<p class="card-desc">{{ project.description }}</p>{% endif %}
+    {% if project.tags and project.tags.length %}
+    <ul class="tags" aria-label="Tags">
+      {% for tag in project.tags %}<li class="tag">{{ tag }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+  </div>
 </li>

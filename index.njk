@@ -1,23 +1,39 @@
 ---
 layout: base.njk
 ---
+{% set branches = projects | uniqueBranches %}
 {% set tags = projects | uniqueTags %}
-{% if tags.length %}
-<div class="filter" role="group" aria-label="Filter projects by tag" hidden>
-  <button type="button" class="filter-btn" data-filter="" aria-pressed="true">All</button>
-  {% for tag in tags %}
-  <button type="button" class="filter-btn" data-filter="{{ tag }}" aria-pressed="false">{{ tag }}</button>
+
+{% if branches.length %}
+<div class="tabs" role="tablist" aria-label="Branches of work" hidden>
+  <button type="button" class="tab" role="tab" data-branch="" aria-selected="true" aria-controls="projects">All</button>
+  {% for branch in branches %}
+  <button type="button" class="tab" role="tab" data-branch="{{ branch }}" aria-selected="false" aria-controls="projects" tabindex="-1">{{ branch }}</button>
   {% endfor %}
 </div>
 {% endif %}
 
-{% if projects.length %}
-<ul class="grid">
-  {#- asyncEach (not for) is required because the screenshot shortcode is async -#}
-  {% asyncEach project in projects %}
-    {% include "card.njk" %}
-  {% endeach %}
-</ul>
-{% else %}
-<p class="empty">No projects yet. Add one in <code>_data/projects.yaml</code>.</p>
+<div id="projects" class="tab-panel" {% if branches.length %}role="tabpanel"{% endif %}>
+  {% if tags.length %}
+  <div class="filter" role="group" aria-label="Filter projects by tag" hidden>
+    <button type="button" class="filter-btn" data-filter="" aria-pressed="true">All</button>
+    {% for tag in tags %}
+    <button type="button" class="filter-btn" data-filter="{{ tag }}" aria-pressed="false">{{ tag }}</button>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if projects.length %}
+  <ul class="grid">
+    {% for project in projects %}
+      {% include "card.njk" %}
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty">No projects yet. Add one in <code>portfolio.yaml</code>.</p>
+  {% endif %}
+</div>
+
+{% if projects | hasType("instagram") %}
+<script async src="https://www.instagram.com/embed.js"></script>
 {% endif %}

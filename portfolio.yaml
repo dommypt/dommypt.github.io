@@ -1,0 +1,103 @@
+# Everything shown on the site. See EDITING.md for a step-by-step guide.
+#
+# The file has two sections:
+#   site:      your name, bio and header links
+#   projects:  the project cards
+# Pictures and photo-gallery folders go in the "images" folder next to this file.
+
+# ---------------------------------------------------------------------------
+# Site-wide settings. Edit the text between the quotes.
+# ---------------------------------------------------------------------------
+site:
+  # Your name, shown as the big heading at the top of the page.
+  name: "Dominika Ptasińska"
+
+  # One or two sentences about you, shown under your name.
+  bio: "Specjalistka ds. komunikacji i promocji It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."
+
+  # Optional links shown in the header (Instagram, LinkedIn, email, ...).
+  # Remove the "#" at the start of the lines below to use them.
+  links: []
+  # links:
+  #   - label: Instagram
+  #     url: https://instagram.com/USERNAME
+  #   - label: LinkedIn
+  #     url: https://linkedin.com/in/USERNAME
+
+# ---------------------------------------------------------------------------
+# Projects
+# ---------------------------------------------------------------------------
+#
+# Copy one of these templates for each new project (keep the indentation!).
+# "branch", "date", "description" and "tags" are optional in all of them.
+# "branch" puts the project under a tab at the top of the page (e.g. Graphic Design).
+#
+# Canva design. "url" is the "Smart embed link" (Share → Embed → Embed):
+#
+# - title: My Project Name
+#   url: https://www.canva.com/design/XXXXXXXX/YYYYYYYY/view?embed
+#   date: 2026-01-31
+#   description: One short sentence about the project.
+#   tags: [poster, branding]
+#
+# Instagram post. "url" is the post's link (⋯ → Copy link):
+#
+# - title: My Instagram Post
+#   url: https://www.instagram.com/p/XXXXXXXXXXX/
+#   date: 2026-01-31
+#
+# TikTok video. "url" is the full link from the browser's address bar
+# (not a short vm.tiktok.com link):
+#
+# - title: My TikTok
+#   url: https://www.tiktok.com/@username/video/1234567890123456789
+#   date: 2026-01-31
+#
+# Picture. Upload the image into the images folder first (subfolders are fine):
+#
+# - title: My Picture
+#   image: my-picture.png
+#   date: 2026-01-31
+#
+# Photo gallery. Upload a whole folder of photos into the images folder and use
+# the folder name. All photos in it are shown in one card, in file-name order:
+#
+# - title: My Gallery
+#   image: my-photo-folder
+#   date: 2026-01-31
+#
+# The site shows the newest projects first; projects without a date go last,
+# in the order they appear in this file.
+
+projects:
+
+- title: Wellmify
+  url: https://www.canva.com/design/DAGnDXW0-Wo/MW38EPIS6lUoI9Fs9zRx0w/view?embed
+  date: 2026-03-14
+  description: Wellmify assignment
+  tags: [poster, branding]
+  branch: work
+
+- title: Sample — Product Launch Deck
+  image: focia.png
+  date: 2026-06-02
+  description: A 12-slide presentation for a product launch.
+  tags: [presentation]
+  branch: selfiaczki
+
+- title: Sample — Instagram Story Set
+  url: https://www.instagram.com/p/DboEO6aI47R/
+  date: 2026-09-20
+  tags: [social media, branding]
+  branch: personal
+
+- title: My TikTok
+  url: https://www.tiktok.com/@skiercon/video/7666072700842003744
+  date: 2026-01-31
+  branch: SkierCon
+
+- title: Memuchy
+  image: memes
+  description: A selection of prime memes
+  branch: Memes
+  tags: [photos]
