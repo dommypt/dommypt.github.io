@@ -1,0 +1,17 @@
+<li class="card" data-tags="{{ (project.tags or []) | join('|') }}">
+  <a class="card-link" href="{{ project.url }}" target="_blank" rel="noopener">
+    <div class="card-thumb">
+      {% screenshot project.screenshot, "Preview of " + project.title %}
+    </div>
+    <div class="card-body">
+      <h2 class="card-title">{{ project.title }}</h2>
+      <time class="card-date" datetime="{{ project.date | isoDate }}">{{ project.date | readableDate }}</time>
+      {% if project.description %}<p class="card-desc">{{ project.description }}</p>{% endif %}
+      {% if project.tags and project.tags.length %}
+      <ul class="tags" aria-label="Tags">
+        {% for tag in project.tags %}<li class="tag">{{ tag }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </a>
+</li>

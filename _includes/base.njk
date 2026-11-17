@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.name or "Portfolio" }}</title>
+  {% if site.bio %}<meta name="description" content="{{ site.bio }}">{% endif %}
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      {% if site.name %}<h1 class="site-name">{{ site.name }}</h1>{% endif %}
+      {% if site.bio %}<p class="site-bio">{{ site.bio }}</p>{% endif %}
+      {% if site.links and site.links.length %}
+      <nav class="site-links" aria-label="Links">
+        {% for link in site.links %}
+        <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a>
+        {% endfor %}
+      </nav>
+      {% endif %}
+    </div>
+  </header>
+
+  <main class="wrap">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>{% if site.name %}© {{ site.name }} · {% endif %}Designs made with Canva</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/filter.js" defer></script>
+</body>
+</html>

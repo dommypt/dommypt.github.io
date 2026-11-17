@@ -1,0 +1,23 @@
+---
+layout: base.njk
+---
+{% set tags = projects | uniqueTags %}
+{% if tags.length %}
+<div class="filter" role="group" aria-label="Filter projects by tag" hidden>
+  <button type="button" class="filter-btn" data-filter="" aria-pressed="true">All</button>
+  {% for tag in tags %}
+  <button type="button" class="filter-btn" data-filter="{{ tag }}" aria-pressed="false">{{ tag }}</button>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% if projects.length %}
+<ul class="grid">
+  {#- asyncEach (not for) is required because the screenshot shortcode is async -#}
+  {% asyncEach project in projects %}
+    {% include "card.njk" %}
+  {% endeach %}
+</ul>
+{% else %}
+<p class="empty">No projects yet. Add one in <code>_data/projects.yaml</code>.</p>
+{% endif %}
