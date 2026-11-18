@@ -71,33 +71,31 @@ site:
 
 projects:
 
-- title: Wellmify
+- title: Zadanie Wellmify
   url: https://www.canva.com/design/DAGnDXW0-Wo/MW38EPIS6lUoI9Fs9zRx0w/view?embed
-  date: 2026-03-14
-  description: Wellmify assignment
-  tags: [poster, branding]
-  branch: work
+  description: Warta uwagi prezentacja zadania rekrutacyjnego dla Wellmify, szczególnie w Task 2 skupiająca się na social mediach, a jednocześnie pokazująca moje umiejętności jeśli chodzi o tworzenie prezentacji w Canvie. 
+  tags: [presentation, brand identity]
+  branch: Zadania rekrutacyjne
 
-- title: Sample — Product Launch Deck
-  image: focia.png
-  date: 2026-06-02
-  description: A 12-slide presentation for a product launch.
-  tags: [presentation]
-  branch: selfiaczki
+- title: Profil Queerdukacja na IG
+  url: https://www.instagram.com/p/CIUwKRuhXTV/
+  description: Profil, który powstał pod wpływem impulsu, jednym postem opublikowanym o 6 rano zgromadził ponad 1000 obserwujących i ponad 7 tysięcy polubień posta. Zarówno merytoryka jak i wykonanie są w pełni moje, nikt inny nie miał swojego udziału w tworzeniu posta.
+  tags: [social media, Instagram]
+  branch: Hobby i Aktywizm
 
-- title: Sample — Instagram Story Set
-  url: https://www.instagram.com/p/DboEO6aI47R/
-  date: 2026-09-20
-  tags: [social media, branding]
-  branch: personal
-
-- title: My TikTok
+- title: TikTok - scenariusz
   url: https://www.tiktok.com/@skiercon/video/7666072700842003744
-  date: 2026-01-31
+  description: TikTok napisany i wyreżyserowany przeze mnie w trakcie konwentu, mający przywitać uczestników pierwszego dnia konwentu i odnoszący się bezpośrednio do popularnego wtedy mema.
+  tags: [social media, TikTok]
   branch: SkierCon
 
-- title: Memuchy
-  image: memes
-  description: A selection of prime memes
-  branch: Memes
-  tags: [photos]
+- title: 
+  url: 
+  date: 
+  branch: 
+
+- title: 
+  image: 
+  description: 
+  branch: 
+  tags: 
