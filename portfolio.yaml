@@ -17,7 +17,7 @@ site:
   # Optional links shown in the header (Instagram, LinkedIn, email, ...).
   # Remove the "#" at the start of the lines below to use them.
   links: []
-  "links:"
+ links:
   - label: Instagram
      url: https://www.instagram.com/do.mmy/
   - label: LinkedIn
