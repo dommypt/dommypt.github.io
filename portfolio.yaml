@@ -79,7 +79,7 @@ projects:
 - title: Profil Queerdukacja na IG
   url: https://www.instagram.com/p/CIUwKRuhXTV/
   description: Profil, który powstał pod wpływem impulsu, jednym postem opublikowanym o 6 rano zgromadził ponad 1000 obserwujących i ponad 7 tysięcy polubień posta. Zarówno merytoryka jak i wykonanie są w pełni moje, nikt inny nie miał swojego udziału w tworzeniu posta.
-  tags: [social media, Instagram]
+  tags: [social media, Instagram, research]
   branch: Hobby i Aktywizm
 
 - title: TikTok - scenariusz
@@ -87,3 +87,15 @@ projects:
   description: TikTok napisany i wyreżyserowany przeze mnie w trakcie konwentu, mający przywitać uczestników pierwszego dnia konwentu i odnoszący się bezpośrednio do popularnego wtedy mema.
   tags: [social media, TikTok]
   branch: SkierCon
+
+- title: Zadanie Wolt
+  url: https://www.canva.com/design/DAGQXJUx1TI/NeHLV54sEiHcr6hUGwzI8w/view?embed
+  description: Pokazuję tutaj tę prezentację głównie w celu pokazania umiejętności tworzenia prezentacji, jej merytoryczna strona nie jest istotna.
+  tags: [presentation, research]
+  branch: Zadania rekrutacyjne
+  
+- title: Profil Queerdukacja na IG
+  url: https://www.instagram.com/p/CIUwKRuhXTV/
+  description: Profil, który powstał pod wpływem impulsu, jednym postem opublikowanym o 6 rano zgromadził ponad 1000 obserwujących i ponad 7 tysięcy polubień posta. Zarówno merytoryka jak i wykonanie są w pełni moje, nikt inny nie miał swojego udziału w tworzeniu posta.
+  tags: [social media, Instagram, research]
+  branch: Hobby i Aktywizm
