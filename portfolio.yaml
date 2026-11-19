@@ -18,9 +18,9 @@ site:
   # Remove the "#" at the start of the lines below to use them.
   links: []
   "links:"
-  label: Instagram
+  - label: Instagram
      url: https://www.instagram.com/do.mmy/
-  label: LinkedIn
+  - label: LinkedIn
     url: https://www.linkedin.com/in/dommypt/
 
 # ---------------------------------------------------------------------------
