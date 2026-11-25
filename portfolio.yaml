@@ -93,8 +93,7 @@ projects:
   tags: [presentation, research]
   branch: Zadania rekrutacyjne
   
-- title: Profil Queerdukacja na IG
-  url: https://www.instagram.com/p/CIUwKRuhXTV/
-  description: Profil, który powstał pod wpływem impulsu, jednym postem opublikowanym o 6 rano zgromadził ponad 1000 obserwujących i ponad 7 tysięcy polubień posta. Zarówno merytoryka jak i wykonanie są w pełni moje, nikt inny nie miał swojego udziału w tworzeniu posta.
-  tags: [social media, Instagram, research]
-  branch: Hobby i Aktywizm
+- title: Portfolio
+  image: portfolio
+  description: Fotografia produktowa
+  tags: [photography]
