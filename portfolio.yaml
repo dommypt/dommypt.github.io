@@ -98,5 +98,5 @@ projects:
 - title: Portfolio
   image: portfolio
   description: Fotografia produktowa i potykacze 
-  tags: [photography][art]
+  tags: [photography, art]
   branch: Księgarnia Autorska
